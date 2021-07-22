@@ -1,0 +1,84 @@
+Librería a instalar:
+
+1) Firebase:
+     npm i firebase
+
+2) Bootswatch (https://bootswatch.com):
+     npm i bootswatch
+
+3) Materialize (https://materializecss.com/icons.html):
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+4) React-toastify (https://github.com/fkhadra/react-toastify)
+     npm install --save react-toastify
+
+-Copiarlo debajo del title en el index.html.
+
+Firebase:
+
+1) Ir a la web, ir a consola, configuración, configuración del 
+proyecto para crear un nuevo proyecto.
+-Colocar nombre del proyecto, habilitar o inhabilitar Google 
+Analitycs según el requerimiento.
+-Ir a consola y bajar, darle click en el símbolo de web </>.
+-Elegir tipo de prueba ya que estamos desarrollando.
+-Colocarle un apodo al proyecto, siguiente, siguiente, elegir 
+zona horaria, listo.
+-En la consola, general, aparecen los datos de configuración del
+sdk, elegir cdn y copiar solo el contenido interno del script:
+     var firebaseConfig = ...
+     ...
+     firebase.initializeApp(firebaseConfig);
+
+VS Code.
+1) Crear un proyecto de react:
+     npx create-react-app nombreApp
+
+2) Instalar Firebase:
+     npm i firebase
+
+3) En la carpeta src del proyecto, crear un archivo llamado 
+firebase.js:
+
+     import firebase from 'firebase/app';
+     import 'firebase/firestore';
+
+     // Esto viene de la consola de Firebase
+     // Your web app's Firebase configuration
+     var firebaseConfig = {
+          ...
+     };
+     // Initialize Firebase
+     const fb = firebase.initializeApp(firebaseConfig);
+
+     // Lo usamos para manejar la base de datos
+     export const db = fb.firestore();
+
+-Importar firebase.
+-Pegar el script que copiamos en la consola del proyecto de 
+firebase.
+-Importar firestore, para realizar las operaciones de una base 
+de datos.
+-Exportamos firestore.
+
+4) Creamos una carpeta components dentro de src.
+
+5) Creamos el componente Links y el componente LinkForm dentro
+de components.
+
+6) Ahora utilizaremos una variante de bootstrap para darle 
+estilo a nuestra app, esta librería se llama Bootswatch 
+(https://bootswatch.com/):
+     npm i bootswatch
+
+7) Importamos la librería de íconos de materialize.
+
+-Su sintaxis funciona así:
+     <i className="material-icons">nombreDelIcono</i>
+
+--Solo se modifica el nombre del icono, colocando el que 
+queremos mostrar. Ejemplo: add, create, insert_link, ac_unit...
+
+8) Instalar la librería react-toastify para añadir mensajes
+personalizados y con estilo, con el snippet de npm que está 
+arriba.
